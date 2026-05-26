@@ -53,7 +53,21 @@ nav ul li a {
     color: black;
     position: relative;
     display: inline-block;
+    margin-left:5px;
 }
+
+.menubar li:hover .submenu{
+      height: 90px;
+    display: block;
+    background-color: #FF1493;
+    padding-left:5px;
+    padding-top: 15px;
+    padding-bottom:px ;
+}
+.submenu{
+    display:none;
+}
+
 nav ul li a::after{
     content:'';
     position: absolute;
@@ -63,7 +77,7 @@ nav ul li a::after{
     height: 2px;
     transition: width 0.3s ease; /*smooth animation */
     background: pink;
-    ;
+    
 
 }
 nav ul li a:hover::after{
@@ -73,7 +87,6 @@ nav ul li a:hover::after{
 h3{
     padding-top: 100px;
     margin-left: 50px;
-    color:;
     border-color: black;
     
 }
