@@ -1,7 +1,6 @@
 *{
     margin:0px;
     padding:0px;
-    color: pink;
 }
 
 header{
@@ -65,6 +64,34 @@ header{
 }
  .submenu{
     display:none;
+ }
+
+ article h1{
+    text-align: center;
+    color: pink;
+    font-size: 60px;
+    font-style: italic;
+ }
+ .mycards{
+    display:flex;
+    flex-direction: row;
+    gap:20px
+
+ }
+ .mycards p{
+    padding-top: 30px;
+    padding-left: 30px;
+    text-align:center ;
+ }
+ .mycards p img{
+    transition: transform 0.3s ease-in-out;
+ }
+ .mycards p img:hover{
+    transform:scale(1.1);
+ }
+ .mycards p a{
+    color: pink;
+    text-decoration: none;
  }
 
  body{
