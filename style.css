@@ -1,3 +1,5 @@
+
+
 body {
      margin:0px;
    
@@ -36,16 +38,18 @@ h5{
 
 
 }
+nav{
+    text-align: center;
+}
  nav ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content:end;
 
 }
 
 nav ul li{
    display: inline-block; 
-    width: 100px;
-
+    width: 150px;
 }
 
 nav ul li a {
@@ -53,17 +57,27 @@ nav ul li a {
     color: black;
     position: relative;
     display: inline-block;
-    margin-left:5px;
 }
 
 .menubar li:hover .submenu{
-      height: 90px;
-    display: block;
-    background-color: #FF1493;
-    padding-left:5px;
-    padding-top: 15px;
-    padding-bottom:px ;
+    display:block; 
+    position:absolute;
+    background: #FF1493;
+    padding-right:10px;
+    text-align: center;
 }
+.menubar li:hover .submenu ul {
+     display:block;
+    width:70px;
+    margin-left:20px;
+    height:90px;
+}
+.menubar li:hover .submenu ul li{
+     padding-top: 20px;
+     margin-left: -65px;
+
+}
+
 .submenu{
     display:none;
 }
@@ -101,6 +115,7 @@ h1{
 .myparagraph{
     margin-left: 50px;
 }
+
 .mybutton a{
     margin-left: 50px;
     border: 5px solid #FF1493;
@@ -109,8 +124,13 @@ h1{
     width:fit-content;
     color:black;
     text-decoration: none;
-    
+     padding: 10px 20px;
+    display: inline-block; 
+    position: relative;     
+    overflow: hidden;
+    z-index: 1; 
 }
+
 footer{
      background-color: #FF1493;
      bottom: 0;
