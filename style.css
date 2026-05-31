@@ -127,8 +127,11 @@ h1{
      padding: 10px 20px;
     display: inline-block; 
     position: relative;     
-    overflow: hidden;
-    z-index: 1; 
+}
+.mybutton a:hover{
+    transition:  width 0.3s ease;
+    background-color: pink;
+    
 }
 
 footer{
@@ -141,6 +144,74 @@ footer{
 p.myfooter{
     display:flex;
     justify-content: center;
-    
+}
 
+@media screen and (max-width: 960px){
+    nav{
+        display:flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .menubar{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+    
+    .menubar.active{
+        background: pink;
+        top:100%;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    .logo{
+        padding-left: 25px;
+    }
+
+    .menubar .toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease;
+        background: black;
+    }
+
+    .menubar li{
+        width:100%;
+    }
+
+    .menubar li a{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menubar .toggle .bar{
+        display: block;
+
+    }
 }
