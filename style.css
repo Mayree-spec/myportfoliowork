@@ -146,6 +146,10 @@ p.myfooter{
     justify-content: center;
 }
 
+.toggle{
+    display:none;
+}
+
 @media screen and (max-width: 960px){
     nav{
         display:flex;
@@ -174,7 +178,7 @@ p.myfooter{
         background: pink;
         top:100%;
         opacity: 1;
-        transition: all 0.5 ease;
+        transition: all 0.5s ease;
         z-index: 99;
         height: 50vh;
         font-size: 1.6rem;
@@ -184,8 +188,9 @@ p.myfooter{
         padding-left: 25px;
     }
 
-    .menubar .toggle .bar{
+    .toggle .bar{
         width: 25px;
+        display: block;
         height: 3px;
         margin: 5px auto;
         transition: all 0.5s ease;
@@ -205,12 +210,16 @@ p.myfooter{
 
     #mobile-menu{
         position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
+        top: 25px;
+        right: 20px;
     }
 
-    .menubar .toggle .bar{
+    .toggle{
+        display:block;
+        cursor:pointer
+    }
+
+     .toggle .bar{
         display: block;
 
     }
