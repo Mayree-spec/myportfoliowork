@@ -36,6 +36,7 @@ header{
 .menubar ul li a{
     color: black;
     text-decoration: none; 
+    position:relative;
 }
 .menubar li a::after{
     content:'';
@@ -115,6 +116,80 @@ footer{
 .socialmedia ul li a{
     text-decoration: none;
     color: black;
+}
+
+@media screen and (max-width:960px) {
+    nav {
+        display:flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width:1300px;
+        padding: 0;
+    }
+
+    .logo{
+        padding-left: 25px;
+    }
+
+   .logo h5{
+        width: 200px;
+    }
+
+    .menubar{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    .menubar.active{
+        background: pink;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    .toggle .bar{
+        width: 25px;
+        display: block;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease;
+        background: black;
+    }
+    .menubar li{
+        width: 100%;
+    }
+
+    .menubar li a{
+        text-align: center;
+        padding: 2rem;
+        width:100%;
+        display: table;
+    }
+
+    .toggle{
+        display: block;
+        cursor:pointer;
+    }
+    #mobile-menu{
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    .toggle .bar{
+        display: block;
+    }
 }
 
 
