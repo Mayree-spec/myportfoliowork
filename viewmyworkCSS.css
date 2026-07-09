@@ -25,10 +25,10 @@ header{
 
  .menubar{
     display:flex;
-    position: relative;
+    /*position: relative;*/
     justify-content: end;
  }
- .menubar ul li{
+ .menubar  li{
     display:inline-block;
     width:100px;
     padding-top: 10px;
@@ -41,12 +41,16 @@ header{
     padding-top: 15px;
     padding-bottom:px ;
  } */
- .menubar ul li a{
+ .menubar li a{
      text-decoration: none;
-    color: black;
+    color:pink;
     position: relative;
     display: inline-block;
     margin-left:5px;
+    font-size: 1.2rem;
+ }
+ .toggle{
+  display: none;
  }
 
  .menubar li a::after{
@@ -83,8 +87,11 @@ header{
     padding-left: 30px;
     text-align:center ;
  }
+ 
  .mycards p img{
     transition: transform 0.3s ease-in-out;
+    width: 350px;
+    height: 450px;
  }
  .mycards p img:hover{
     transform:scale(1.1);
@@ -92,9 +99,88 @@ header{
  .mycards p a{
     color: pink;
     text-decoration: none;
+    font-size: 1.2rem;
  }
 
  body{
     background-attachment:scroll;
     background-color: black;
+ }
+
+ @media screen and (max-width: 960px) {
+   nav{
+      position: relative;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      width: 100%;
+      padding: 0 20px;
+      overflow: visible;
+   }
+
+   header{
+      overflow: visible;
+      height: 70px;
+      display: flex;
+      align-items: center;
+   }
+
+   .menubar{
+     display: none;
+     position: fixed;
+     top:75px;
+     left:0;
+     width: 100%;
+     background: #FF1493;
+     z-index: 999;
+     padding: 15px 0;
+
+   }
+
+   .menubar.active{
+      display: block;
+   }
+
+   .menubar li{
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 1px solid pink;
+   }
+
+   .menubar li a{
+      color: black;
+      font-size: 1.2rem;
+      display: block;
+      width: 100%;
+   }
+
+   .toggle{
+      display: block;
+      cursor: pointer;
+      z-index: 1000;
+   }
+
+   .toggle .bar{
+      width: 25px;
+      height: 3px;
+      display: block;
+      margin: 5px auto;
+      transition: all 0.5s ease;
+      background: black;
+   }
+   
+
+
+
+
+
+
+   .mycards{
+      display: flex;
+      flex-direction: column;
+
+   }
  }

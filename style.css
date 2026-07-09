@@ -16,50 +16,64 @@ body::before{
     z-index: -1;   
 }
 
+nav{
+    margin-top: 0px;
+}
 header{
     background-color:#FF1493;
     height:110px; 
-
-}
-h4{
-    margin-top: 0px;
-    margin-left: 50px;
-    font-weight: lighter;
-    color: black;
-    padding-top: 20px;
-    font-style: italic;
-}
-h5{
     margin-top: -20px;
-    margin-left: 50px;
-    padding-top: 0px;
+}
+
+.logo{
+    margin-top: 0px;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+.logo h4{
+    color: black;
+    font-weight: lighter;
+    font-style: italic;
+    margin-left: -30px;
+}
+.logo h5{
     color: pink;
-    font-style:italic
-
-
+    font-style:italic;
+    margin-top:-20px;
+    margin-left: 20px;
 }
 nav{
     text-align: center;
-}
- nav ul {
+     position: relative;
+    overflow: visible;
     display: flex;
-    justify-content:end;
+    justify-content: space-between;
+    height: 100px;
+}
+ .menubar {
+     display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 90px;
+    list-style: none;
+    padding-top: 70px;
 
 }
 
-nav ul li{
+.menubar li{
    display: inline-block; 
     width: 150px;
 }
 
-nav ul li a {
+.menubar li a {
     text-decoration: none;
     color: black;
     position: relative;
     display: inline-block;
+    font-size: 1.2rem;
 }
 
-.menubar li:hover .submenu{
+/*.menubar li:hover .submenu{
     display:block; 
     position:absolute;
     background: #FF1493;
@@ -71,7 +85,7 @@ nav ul li a {
     width:70px;
     margin-left:20px;
     height:90px;
-}
+}*/
 .menubar li:hover .submenu ul li{
      padding-top: 20px;
      margin-left: -65px;
@@ -137,8 +151,8 @@ h1{
 footer{
      background-color: #FF1493;
      bottom: 0;
-     height:100px;
-     margin-top:170px;
+     height:60px;
+     margin-top:175px;
      padding-top: 30px;   
 }
 p.myfooter{
@@ -152,40 +166,45 @@ p.myfooter{
 
 @media screen and (max-width: 960px){
     nav{
+        position: relative;
         display:flex;
         justify-content: space-between;
         height: 80px;
-        z-index: 1;
         width: 100%;
-        max-width: 1300px;
-        padding: 0;
+        padding: 0 20px;
+        align-items: center;
+        overflow: visible;
     }
 
-    .menubar{
-        display: grid;
-        grid-template-columns: auto;
-        margin: 0;
-        width: 100%;
-        position: absolute;
-        top: -1000px;
-        opacity: 0;
-        transition: all 0.5s ease;
-        height: 50vh;
-        z-index: -1;
+     header {
+        overflow: visible;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        margin-top: 0px;
     }
+
+
+    .menubar{
+        display: none;
+        position: fixed;
+        top:70px;
+        left:0;
+        width: 100%;
+        background: #FF1493;
+        z-index: 999;
+        padding: 10px 0;
+    }
+
+    
     
     .menubar.active{
-        background: pink;
-        top:100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 99;
-        height: 50vh;
-        font-size: 1.6rem;
+        display: block;
     }
 
     .logo{
         padding-left: 25px;
+        padding-bottom: 20px;
     }
 
     .toggle .bar{
@@ -196,16 +215,24 @@ p.myfooter{
         transition: all 0.5s ease;
         background: black;
     }
+    .toggle{
+         display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
 
     .menubar li{
-        width:100%;
+         display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid black;
     }
 
     .menubar li a{
         text-align: center;
-        padding: 2rem;
         width: 100%;
-        display: table;
+        display: block;
     }
 
     #mobile-menu{
